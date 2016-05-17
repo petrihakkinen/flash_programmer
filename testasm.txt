@@ -1,0 +1,23 @@
+test1:
+
+1770	inc $900f        EE 0F 90
+		rts             60
+
+=> 238 15 144 96
+
+
+test2:
+1770    inc $900f        EE 0F 90
+    	jmp $1770        4C 70 17
+
+=> 238 15 144 76 112 23
+
+test3 (in module memory space):
+a000    inc $900f        EE 0F 90
+    	jmp $a000        4C 00 A0
+
+=> EE 0F 90 4C 00 A0
+
+w0EE0F904C00A0*
+
+w0EE05904C00A0*
